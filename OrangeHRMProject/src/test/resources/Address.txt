@@ -1,0 +1,20 @@
+All addresses
+
+-Chrome Driver
+C:\Users\Thang Ha\.cache\selenium\chromedriver\win32\105.0.5195.52
+C:\Users\Thang Ha\.cache\selenium\chromedriver\win32\103.0.5060.134
+
+
+-MicroSoft Edge
+C:\Users\Thang Ha\.cache\selenium\msedgedriver\win64\103.0.1264.77
+
+-FireFox
+
+
+
+
+
+
+
+
+
