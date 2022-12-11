@@ -17,7 +17,7 @@ public class OrangeHRMTest extends Base {
 	LocatorMap map = new LocatorMap("src/test/resources/locatormap.properties");
 	SelectDDAndDates DropDown = new SelectDDAndDates();
 	AddAndRemoveEmployees addRemoveEmployees = new AddAndRemoveEmployees();
-	ClickOrFilling FillingIn = new ClickOrFilling();
+	ClickOrFilling FillIn = new ClickOrFilling();
 	ClickButtons clickButtons = new ClickButtons();
 	ClickingPages clickPage = new ClickingPages();
 	timeSheetPage timeTest = new timeSheetPage();
@@ -42,15 +42,15 @@ public class OrangeHRMTest extends Base {
 		clickButtons.clickSearchOnPIM();
 		clickButtons.clickOnFirstPerson();
 		clickButtons.clickContactDetails();
-		FillingIn.Street1(Street);
-		FillingIn.City(City);
-		FillingIn.stateProvince(State);
-		FillingIn.Zip(Zip);
+		FillIn.Street1(Street);
+		FillIn.City(City);
+		FillIn.stateProvince(State);
+		FillIn.Zip(Zip);
 		DropDown.selectState(Country);
-		FillingIn.home(homeNum);
-		FillingIn.work(workNum);
-		FillingIn.mobile(mobileNum);
-		FillingIn.saveContact(true);
+		FillIn.home(homeNum);
+		FillIn.work(workNum);
+		FillIn.mobile(mobileNum);
+		FillIn.saveContact(true);
 
 	}
 
@@ -59,10 +59,10 @@ public class OrangeHRMTest extends Base {
 		LogIn.StartUpPageLogIn();
 		clickPage.clickPIM();
 		clickButtons.clickAddBtnOnPIMPage();
-		FillingIn.addEmployeeInfoFirstName("Ichigo");
-		FillingIn.addEmployeeInfoMiddleName("");
-		FillingIn.addEmployeeInfoLastName("Kurosaki");
-		FillingIn.employeeIDAdd("1");
+		FillIn.addEmployeeInfoFirstName("Ichigo");
+		FillIn.addEmployeeInfoMiddleName("");
+		FillIn.addEmployeeInfoLastName("Kurosaki");
+		FillIn.employeeIDAdd("1");
 		clickButtons.uploadImage("src/test/resources/Ichigo Kurosaki.jpg");
 		clickButtons.addEmployeeSaveBtn();
 
@@ -77,28 +77,14 @@ public class OrangeHRMTest extends Base {
 		DropDown.selectFromDateOnLeave("2023-06-01");
 		DropDown.selectToDateOnLeave("");
 		DropDown.durationSelectSpecificTime();
-		FillingIn.functiontTestFromClock();
-		FillingIn.customizeFromTime("04:00 PM");
-		FillingIn.customizeToTime("05:00 PM");
-		FillingIn.addCommentsOnLeave("Needs to take a month off to drink a lot of beer, thanks!");
+		FillIn.functiontTestFromClock();
+		FillIn.customizeFromTime("04:00 PM");
+		FillIn.customizeToTime("05:00 PM");
+		FillIn.addCommentsOnLeave("Needs to take a month off to drink a lot of beer, thanks!");
 		clickButtons.saveBtnOnApplyLeave();
 
 	}
 
-	@Test(enabled = true)
-	public void editJob() {
-		LogIn.StartUpPageLogIn();
-		// write a code where you can edit whatever time of the week
-		clickPage.clickTime();
-		timeTest.clickView1Btn();
-		timeTest.clickEditBtnOnTimeSheets();
-		timeTest.firstRow(url, url, url, url, url, url, url);
-		
-		
-		
-		timeTest.addRow();
-		timeTest.addProjectName("Internal - General HR Tasks");
-	}
 
 	@Test
 	public void searchUpPeopleInPIM() {
@@ -108,11 +94,11 @@ public class OrangeHRMTest extends Base {
 		
 		LogIn.StartUpPageLogIn();
 		clickPage.clickPIM();
-		FillingIn.employeeName(name);
+		FillIn.employeeName(name);
 		clickButtons.clickEmployeeID(ID);
 		DropDown.selectEmployeementStatusDropD("Freelance");
 		DropDown.selectIncludeOnPIM("Past Employees Only");
-		FillingIn.supervisorName(supervisorName);
+		FillIn.supervisorName(supervisorName);
 		DropDown.selectJobTitleOnPIM("");
 		
 	}
